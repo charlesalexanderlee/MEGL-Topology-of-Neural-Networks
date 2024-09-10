@@ -2,10 +2,8 @@ import tensorflow as tf
 from tensorflow.keras.callbacks import Callback
 import numpy as np
 from ripser import ripser
-import gudhi
 from gudhi.representations import Silhouette
 import warnings
-import os
 import matplotlib.pyplot as plt
 import scipy.spatial
 import wandb

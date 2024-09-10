@@ -21,7 +21,11 @@ import distances
 #compute_landscape.tdatools = importr('tdatools')
 data = []
 for num in range(6):
-    data.append(np.load(os.getcwd() + "\data\mnist_long_model_layer_f" + str(num) + "_relu_epoch0.npy")[:100])
+    '''
+    file does not exist in resources
+    - diane
+    '''
+    data.append(np.load(os.getcwd() + r"\data\mnist_long_model_layer_f" + str(num) + "_relu_epoch0.npy")[:100])
 
 output = []
 

@@ -1,16 +1,21 @@
+# imports
 import wandb
-wandb.login(key="d4050231a048ba552f448d9a5521b8456826d511")
-from wandb.keras import WandbMetricsLogger, WandbModelCheckpoint
-import tensorflow as tf
-import numpy as np
+from constants import wandb_key
+wandb.login(key=wandb_key)
+
+from wandb.integration.keras import WandbMetricsLogger, WandbModelCheckpoint
+from enclosed_pipline import *
+
+from tensorflow.keras.regularizers import l1_l2
 from tensorflow.keras.datasets import cifar10
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.layers import Input, Dense, Conv2D, BatchNormalization, MaxPooling2D, Flatten, concatenate, Dropout
 from tensorflow.keras.models import Model
 from tensorflow.keras import layers
 from tensorflow.keras.callbacks import EarlyStopping
+
 import matplotlib.pyplot as plt
-from enclosed_pipline import *
+import numpy as np
 
 # Weights and Biases stuff
 sweep_config = {
@@ -82,12 +87,12 @@ def train():
     model_input =  Input(shape=(32, 32, 3))
 
 
-    x = Conv2D(8, (2,2), strides=2, activation=activation_funct, kernel_regularizer=tf.keras.regularizers.l1_l2(l1=0.01, l2=0.1), padding='same') (model_input)
+    x = Conv2D(8, (2,2), strides=2, activation=activation_funct, kernel_regularizer=l1_l2(l1=0.01, l2=0.1), padding='same') (model_input)
     x = BatchNormalization() (x)
     x = MaxPooling2D((3,3), padding='same') (x)
     x = Dropout(0.25) (x)
 
-    x = Conv2D(16, (3,3), strides=2, activation=activation_funct, kernel_regularizer=tf.keras.regularizers.l1_l2(l1=0.01, l2=0.01), padding='same') (model_input)
+    x = Conv2D(16, (3,3), strides=2, activation=activation_funct, kernel_regularizer=l1_l2(l1=0.01, l2=0.01), padding='same') (model_input)
     x = BatchNormalization() (x)
     x = MaxPooling2D((3,3), padding='same') (x)
     x = Dropout(0.25) (x)

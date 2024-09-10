@@ -13,10 +13,10 @@ To deactivate virtual environment (venv):</br>
 while inside the virtual environment, type 'deactivate' into your terminal and hit enter</br>
 
 Authors:</br>
-Alex Martinez</br>
+Charles Alexander Lee</br>
 David Wigginton</br>
 Diane Hamilton</br>
 Eugenie Ahn</br>
 Finn Brennan</br>
-Joseph A Jung</br>
+Joseph A. Jung</br>
 Shrunal Pothagoni</br>

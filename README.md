@@ -1,4 +1,4 @@
-Topology of Neural Networks
+#Topology of Neural Networks
 
 Authors:
 Alex Martinez

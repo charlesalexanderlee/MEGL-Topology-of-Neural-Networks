@@ -14,6 +14,21 @@ Clone the respistory
 git clone https://github.com/charlesalexanderlee/MEGL-Topology-of-Neural-Networks
 ```
 
+## Run stuff in src
+You should have python 3.10.0, if you don't...</br>
+install pyenv -> [https://github.com/pyenv/pyenv?tab=readme-ov-file#installation](url)</br>
+go to root directory for the repo</br>
+pyenv install 3.10.0</br>
+pyenv local 3.10.0</br>
+
+After you've set your python to python 3.10.0 we need to set up our dependencies</br>
+pip install virtualenv</br>
+virtualenv venv</br>
+venv\...\activate</br>
+pip install -r freeze_file.txt</br>
+
+Now you can run anything in src</br>
+
 ## Authors
 **Faculty Member**
 * Dr. Benjamin Schweinhart

@@ -1,22 +1,22 @@
 # Topology of Neural Networks
 
 Create virtual env and run experiments in src:</br>
-open terminal
-cd into repo (MEGL-Topology-of-Neural-Networks)
-pip install --force-reinstall -v "virtualenv==20.26.4"
-virtualenv venv
-if on Windows: venv\Scripts\activate
-else: execute venv's activate 
-pip install -r requirements.txt
+open terminal</br>
+cd into repo (MEGL-Topology-of-Neural-Networks)</br>
+pip install --force-reinstall -v "virtualenv==20.26.4"</br>
+virtualenv venv</br>
+if on Windows: venv\Scripts\activate</br>
+else: execute venv's activate</br>
+pip install -r requirements.txt</br>
 
-To deactivate virtual environment (venv):
-while inside the virtual environment, type 'deactivate' into your terminal and hit enter
+To deactivate virtual environment (venv):</br>
+while inside the virtual environment, type 'deactivate' into your terminal and hit enter</br>
 
-Authors:
-Alex Martinez
-David Wigginton
-Diane Hamilton
-Eugenie AhnA
-Finn Brennan
-Joseph A Jung
-Shrunal Pothagoni
+Authors:</br>
+Alex Martinez</br>
+David Wigginton</br>
+Diane Hamilton</br>
+Eugenie Ahn</br>
+Finn Brennan</br>
+Joseph A Jung</br>
+Shrunal Pothagoni</br>

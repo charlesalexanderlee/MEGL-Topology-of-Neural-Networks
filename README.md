@@ -24,7 +24,7 @@ pyenv local 3.10.0</br>
 After you've set your python to python 3.10.0 we need to set up our dependencies</br>
 pip install virtualenv</br>
 virtualenv venv</br>
-venv\...\activate</br>
+venv\\...\\activate</br>
 pip install -r freeze_file.txt</br>
 
 Now you can run anything in src</br>

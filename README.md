@@ -1,22 +1,26 @@
 # Topology of Neural Networks
 
-Create virtual env and run experiments in src:</br>
-open terminal</br>
-cd into repo (MEGL-Topology-of-Neural-Networks)</br>
-pip install --force-reinstall -v "virtualenv==20.26.4"</br>
-virtualenv venv</br>
-if on Windows: venv\Scripts\activate</br>
-else: execute venv's activate</br>
-pip install -r requirements.txt</br>
+GitHub respository for the Topology of Neural Networks team at the Mason Experimental Geometry Laboratory.
 
-To deactivate virtual environment (venv):</br>
-while inside the virtual environment, type 'deactivate' into your terminal and hit enter</br>
+https://megl.science.gmu.edu/
 
-Authors:</br>
-Charles Alexander Lee</br>
-David Wigginton</br>
-Diane Hamilton</br>
-Eugenie Ahn</br>
-Finn Brennan</br>
-Joseph A. Jung</br>
-Shrunal Pothagoni</br>
+## Abstract
+A neural network may be geometrically interpreted as nonlinear function that stretches and pulls apart data between vector spaces. If a dataset has interesting geometric or topological structure, one might ask how the structure of the data will change when passed through a neural network. This is achieved by explicitly viewing the dataset as a manifold and observing how the topological complexity (i.e., the sum of the Betti numbers) of the manifold changes as it passes through the activation layers of a neural network. 
+
+The goal of this project is to study how the topological complexity of the data changes by tuning the hyper-parameters of the network. This enables us to possibly understand the relationship between the structural mechanics of the network and its performance.
+
+## Installation
+Clone the respistory
+```
+git clone https://github.com/charlesalexanderlee/MEGL-Topology-of-Neural-Networks
+```
+
+## Authors
+* Eugenie Ahn
+* Finn Brennan
+* Diane Hamilton
+* Joseph A. Jung
+* Charles Alexander Lee
+* Shrunal Pothagoni
+* Benjamin Schweinhart
+* David Wigginton

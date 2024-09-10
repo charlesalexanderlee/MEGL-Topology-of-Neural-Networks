@@ -1,6 +1,6 @@
 # Topology of Neural Networks
 
-Create virtual env and run experiments in src:
+Create virtual env and run experiments in src:</br>
 open terminal
 cd into repo (MEGL-Topology-of-Neural-Networks)
 pip install --force-reinstall -v "virtualenv==20.26.4"

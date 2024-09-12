@@ -25,7 +25,7 @@ Install Python 3.10.0 with `pyenv` and switch versions:
 pyenv install 3.10.0
 pyenv local 3.10.0
 ```
-After setting the Python version to Python 3.10.0, we need to create a virtual environment using `virtualenv`:
+After switching to Python 3.10.0, we need to create a virtual environment using `virtualenv`:
 ```
 pip install virtualenv
 virtualenv venv
@@ -48,7 +48,7 @@ pip install -r freeze_file.txt
 The installation should be complete. You can now run any experiment in the `src/` directory!
 
 ## Running Experiments
-To be developed soon (currently working with the MNIST dataset and the CIFAR10 dataset)
+Coming soon (we are currently experimenting with the MNIST dataset and the CIFAR10 dataset).
 
 ## Authors
 **Faculty Member**

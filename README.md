@@ -43,7 +43,7 @@ source venv/Scripts/activate
 
 Finally, we need to install the project dependency requirements:
 ```
-pip install -r freeze_file.txt
+pip install -r requirements.txt
 ```
 The installation should be complete. You can now run any experiment in the `src/` directory!
 

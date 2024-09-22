@@ -55,7 +55,7 @@ Coming soon (we are currently experimenting with the MNIST dataset and the CIFAR
 **Undergraduate Students**
 * Eugenie Ahn
 * Finn Brennan
-* Diane Hamilton
+* [Diane Hamilton](https://www.linkedin.com/in/dhamil-bytes/)
 * Joseph A. Jung
-* Charles Alexander Lee
+* [Charles Alexander Lee](https://www.linkedin.com/in/charlesalee/)
 * David Wigginton

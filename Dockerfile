@@ -21,7 +21,7 @@ RUN python -m pip install --upgrade pip setuptools wheel
 WORKDIR /app
 
 # Copy the requirements file into the container
-COPY freeze_file.txt ./
+COPY requirements.txt ./
 
 # Install Python dependencies from the freeze file
 RUN pip install --no-cache-dir --verbose -r requirements.txt

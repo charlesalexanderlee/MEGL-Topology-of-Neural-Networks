@@ -1,24 +1,8 @@
-# windows users - need mingw installed
-# wandb
-wandb==0.17.9
-# dependencies for ripser
-ripser==0.6.10
-Cython==3.0.11
-numpy==1.26.4
-persim==0.3.7
-scikit-learn==1.5.1
-scipy==1.12.0
-# tensorflow
-tensorboard==2.17.1
-tensorboard-data-server==0.7.2
-tensorflow==2.17.0
-tensorflow-intel==2.17.0
-# other
-gudhi==3.10.1
+https://files.pythonhosted.org/packages/1a/10/4d451d45bb673362efe8e835962de8a6e918809fd7ce1a9fbff65c8cf8ec/gudhi-3.10.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+matplotlib==3.8.2
+numpy==1.25.2
 pandas==2.2.2
-keras==3.5.0
-matplotlib==3.8.3
-matplotlib-inline==0.1.6
-imbalanced-learn==0.12.0
-ml-dtypes==0.4.0
-requests==2.32.3
+ripser==0.6.8
+scipy==1.11.2
+tensorflow==2.15.0
+wandb==0.16.6

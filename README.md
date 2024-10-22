@@ -49,7 +49,6 @@ Coming soon (we are currently experimenting with the MNIST dataset and the CIFAR
 * Dr. Benjamin Schweinhart
 
 **Graduate Students**
-* Justin Cox
 * Shrunal Pothagoni
 
 **Undergraduate Students**

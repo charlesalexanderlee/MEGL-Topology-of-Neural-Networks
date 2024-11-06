@@ -1,7 +1,8 @@
 import tensorflow as tf
 from tensorflow.keras.callbacks import Callback
 import numpy as np
-from ripser import ripser
+# from ripser import ripser
+import ripserplusplus as rpp
 from gudhi.representations import Silhouette
 import warnings
 import matplotlib.pyplot as plt
@@ -31,7 +32,7 @@ class ExtractIntermediateOutputs(Callback):
             output = []
             
             for num in range(len(intermediate_outputs)):
-                intermediate_outputs[num] = intermediate_outputs[num][:100]
+                intermediate_outputs[num] = intermediate_outputs[num][:1000]
                 maxdim = 3
                 threshold = 1000 
                 normalization='identity'
@@ -39,19 +40,20 @@ class ExtractIntermediateOutputs(Callback):
                 k=12
                 percentile=0.9
                 center=None
-                _distance = lambda u, v: np.sqrt(((u-v)**2).sum())
-                X = intermediate_outputs[num].reshape(intermediate_outputs[num].shape[0], -1)
+                X = intermediate_outputs[num].reshape(intermediate_outputs[num].shape[0], -1) # The Point cloud
                 with warnings.catch_warnings():
                     warnings.simplefilter("ignore")
-                    distance_matrix = scipy.spatial.distance.squareform(scipy.spatial.distance.pdist(X, metric=_distance))
-                    diagram = ripser(distance_matrix, maxdim=maxdim, thresh=threshold, metric='precomputed')['dgms']
+                    # distance_matrix = scipy.spatial.distance.squareform(scipy.spatial.distance.pdist(X, metric=_distance))
+                    # diagram = ripser(distance_matrix, maxdim=maxdim, thresh=threshold, metric='precomputed')['dgms']
+                    diagram = rpp.run("--format point-cloud --dim 3 --threshold 1000", X)
                 if diagram[0][-1][-1] == np.inf:
                     diagram[0][-1][-1] = threshold
                 dx=0.1
                 min_x= 0
                 max_x=10
                 threshold=-1
-                diags = [diagram[0][:-1]]
+                #diags = [diagram[0][:-1]]
+                diags = [np.array([(pt['birth'], pt['death']) for pt in diagram[0][:-1]])]
                 SH = Silhouette(resolution=1000, weight=lambda x: np.power(x[1]-x[0],1))
                 sh = SH.fit_transform(diags)
 

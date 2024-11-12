@@ -1,3 +1,6 @@
+# python==3.8 on hopper 
+# below installs require python >= 3.10
+
 https://files.pythonhosted.org/packages/1a/10/4d451d45bb673362efe8e835962de8a6e918809fd7ce1a9fbff65c8cf8ec/gudhi-3.10.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
 matplotlib==3.8.2
 numpy==1.25.2
@@ -6,3 +9,13 @@ ripser==0.6.8
 scipy==1.11.2
 tensorflow==2.15.0
 wandb==0.16.6
+
+# for hopper:
+# gudhi
+# matplotlib
+# numpy
+# pandas
+# ripser
+# scipy
+# tensorflow
+# wandb

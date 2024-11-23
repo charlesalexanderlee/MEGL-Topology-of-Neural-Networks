@@ -121,5 +121,36 @@ def train():
 
 for sweep_num in range(500):
     directory = f"sweep{sweep_num}"
+    sweep_config = {
+    "name": directory,
+    'method': "bayes",
+    'metric': {
+        'name': 'accuracy',
+        'goal': 'maximize',
+    },
+    'parameters': {
+        "optimizer": {
+            "values": ['adam']
+        },
+        "l1": {
+            "values": [64, 128, 256, 512]
+        },
+        "l2": {
+            "values": [64, 128, 256, 512]
+        },
+        "l3": {
+            "values": [64, 128, 256, 512]
+        },
+        "l4": {
+            "values": [64, 128, 256, 512]
+        },
+        "l5": {
+            "values": [64, 128, 256, 512]
+        },
+        "l6": {
+            "values": [64, 128, 256, 512]
+        },
+    },
+}
     sweep_id = wandb.sweep(sweep_config, project="Cifar10_test")
     wandb.agent(sweep_id, train, count=1)

@@ -10,24 +10,22 @@ import scipy
 from scipy import integrate
 import wandb
 import os
-from constants import directory_name
 
-# ======= DEFINE CALCULATION PARAMETERS =======
-num_points = 400
-sweep_number = 0  # Example sweep number
-base_dir = f"~/MEGL-Topology-of-Neural-Networks/{directory_name}/sweep{sweep_number}"      
-num_layers = 6                                    # Careful with changing this, You must make sure your model actually has this number of dense layers
-num_dimensions = 2
-# =============================================
-
-# Define the base directory and sweep number
-
+# Define the base directory and sweep number (Change base_dir to the directory you wish to save your sweeps)
+sweep_number = 6 # Example sweep number
+base_dir = f"/scratch/jjung43/MEGL-Topology-of-Neural-Networks/data4Res/sweep{sweep_number}"
 
 # Specify the epochs and number of layers
-epochs = [0, 9, 19, 29, 39, 49]
+epochs = [0, 2, 4, 6, 8, 10]
+num_layers = 3  # Assuming 6 layers
 
-allTC = [[], [], [], []]
+# Specify the number of points and dimensions
+num_points = 1600               # ** Number of points you wish to sample from the point cloud **
+dim = 2                         # compute up to H_{dim} Topological Complexity
+# Iterate through each epoch
+allTC = [[], [], [], []]        # Add more if you'd like to computer higher dimensional TC, this limits you to 0-3.
 Metric2 = []
+
 
 for epoch in epochs:
     TC = []
@@ -55,7 +53,7 @@ for epoch in epochs:
         X = intermediate_outputs[num].reshape(intermediate_outputs[num].shape[0], -1) # The Point cloud
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
-            diagram = rpp.run(f"--format point-cloud --dim {num_dimensions} --threshold 1000", X)
+            diagram = rpp.run(f"--format point-cloud --dim {dim} --threshold 1000", X)
 
         for homology in range(len(diagram)):
             if len(diagram[homology]) == 0:
@@ -75,36 +73,37 @@ for epoch in epochs:
                 print(f"Homology {homology}: No valid points for Silhouette. Skipping...")
                 continue
 
+            print(f"Prepared diagram for Homology {homology}: {diags}")
             SH = Silhouette(resolution=1000, weight=lambda x: np.power(x[1] - x[0], 1))
             sh = SH.fit_transform(diags)  # Pass the list of diagrams
 
             outputs[homology].append(np.linalg.norm(sh))
 
+    print(outputs)
+
     for homology in range(len(outputs)):
         if len(outputs[homology]) > 0:
             tcx = np.linspace(0, 1, len(outputs[homology]))
             allTC[homology].append(np.sqrt(scipy.integrate.simpson([y**2 for y in outputs[homology]], tcx)))
-# ======================== AFTER THIS POINT WE HAVE FINISHED RIPSER++ CALCULATIONS OF PERSISTENT HOMOLOGY =====================
 
-# ====================== Graph Data with Matplotlib ========================
 
+print(allTC)
+# Plot and save
 plt.title("Topological Complexity Over Training")
 plt.xlabel("Epochs")
 for homology in range(len(allTC)):
     if allTC[homology]:  # Ensure data is not empty
+        print("we got a non-empty TC")
         plt.plot(allTC[homology], label=f"Norm of TC_{homology}")
     else:
         print(f"No data for Homology {homology}")
 
 # Define custom x-axis ticks and labels
 custom_ticks = np.linspace(1, 5, len(epochs))  # Positions for labels on the x-axis
-custom_labels = [0, 9, 19, 29, 39, 49]         # Labels corresponding to epochs
+custom_labels = [0, 2, 4, 6, 8, 10]         # Labels corresponding to epochs
 plt.xticks(custom_ticks, labels=custom_labels)
 # Label the axes
 plt.xlabel("Epochs")
 plt.legend()  # Add a legend to identify the lines
-plt.savefig(f"sweep{sweep_number}-{num_points}pts-dim3")  # Save the plot
-print("Plot saved as 'sweepImage.png'")
+plt.savefig(f"Resnet-sweep{sweep_number}-{num_points}pts-dim2")  # Save the plot
 plt.show()  # Display the plot
-
-# ===========================================================================

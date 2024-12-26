@@ -3,9 +3,10 @@ from tensorflow.keras.callbacks import Callback
 import numpy as np
 import matplotlib.pyplot as plt
 import wandb
-import os
 from pathlib import Path
 from constants import directory_name
+
+# ====== This file defines a class that extracts data from a given layer as the neural network trains ======
 
 class ExtractIntermediateOutputs(Callback):
     def __init__(self, model, epochs_to_extract, layer_names, x_train, save_location, sweep_run):

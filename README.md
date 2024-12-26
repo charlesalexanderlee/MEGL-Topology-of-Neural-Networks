@@ -6,43 +6,25 @@ GitHub respository for the Topology of Neural Networks team at the Mason Experim
 https://megl.science.gmu.edu/
 
 ## Abstract
-A neural network may be geometrically interpreted as nonlinear function that stretches and pulls apart data between vector spaces. If a dataset has interesting geometric or topological structure, one might ask how the structure of the data will change when passed through a neural network. This is achieved by explicitly viewing the dataset as a manifold and observing how the topological complexity (i.e., the sum of the Betti numbers) of the manifold changes as it passes through the activation layers of a neural network. The goal of this project is to study how the topological complexity of the data changes by tuning the hyper-parameters of the network. This enables us to possibly understand the relationship between the structural mechanics of the network and its performance.
+A neural network may be geometrically interpreted as nonlinear function that stretches and pulls apart data between vector spaces. If a dataset has interesting geometric or topological structure, one might ask how the structure of the data will change when passed through a neural network. This is achieved by explicitly viewing the dataset as a manifold and observing how the topological complexity (i.e., the sum of the Betti numbers) of the manifold changes as it passes through the activation layers of a neural network. We can model this manifold using persistent homology and constructing simplicial complexes that roughly captures the topological structure of the manifold our data lives on. The goal of this project is to study how the topological complexity of the data changes as it goes through each layer of the neural network and as it trains over a certain number of epochs. This enables us to possibly understand the relationship between the structural mechanics of the network and its performance.
 
 ## Installation
-This repository requires Docker, which can be installed from:
 
-https://docs.docker.com/engine/install/ 
-
-Check that Docker has been successfully installed and that the Docker daemon is currently running:
-```
-docker --version
-docker info
-```
-If the Docker daemon is running, `docker info` will return detailed information about the Docker system. If it is not running, refer to the Docker daemon documentation:
-
-https://docs.docker.com/engine/daemon/start/
-
-Clone the Github repoistory:
-```
+Clone the Github repository:
+```bash
 git clone https://github.com/charlesalexanderlee/MEGL-Topology-of-Neural-Networks
 ```
 Go into the project folder:
-```
+``` bash
 cd MEGL-Topology-of-Neural-Networks/
 ```
-
-Build the Docker container:
-```
-docker build --platform=linux/amd64 -t megl-tnn .
+``` bash
+pip install requirements.txt
 ```
 
-Run the Docker container:
-```
-docker run -it --rm megl-tnn
-```
 
-## Running Experiments
-Coming soon (we are currently experimenting with the MNIST dataset and the CIFAR10 dataset).
+## Experiment
+
 
 ## Authors
 **Faculty Member**

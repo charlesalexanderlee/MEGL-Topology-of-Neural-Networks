@@ -10,6 +10,8 @@ A neural network may be geometrically interpreted as nonlinear function that str
 
 ## Installation
 
+First Ensure that you have python 3.10.x installed.
+
 Clone the Github repository:
 ```bash
 git clone https://github.com/charlesalexanderlee/MEGL-Topology-of-Neural-Networks
@@ -18,9 +20,20 @@ Go into the project folder:
 ``` bash
 cd MEGL-Topology-of-Neural-Networks/
 ```
+
+Create a Python Virtual Environment
 ``` bash
-pip install requirements.txt
+python -m venv /path/to/new/virtual/environment
 ```
+Activate Environment
+``` bash
+source /path/to/new/virtual/environment/bin/activate
+```
+Ensure pip is up to date
+``` bash
+pip install --upgrade pip
+```
+
 
 
 ## Experiment

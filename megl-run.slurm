@@ -24,6 +24,6 @@ module load python
 module load cudnn
 module load cmake
 
-pip install -r ${USER_PATH}MEGL-Topology-of-Neural-Networks/requirements.txt
+source 'PATH_TO_VIRTUAL_ENVIRONMENT'
 
 python ${USER_PATH}MEGL-Topology-of-Neural-Networks/src/WAB_Cifer10.py

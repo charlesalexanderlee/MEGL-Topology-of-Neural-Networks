@@ -9,9 +9,9 @@
 #SBATCH --gres=gpu:A100.80gb:1                # up to 8; only request what you need
 #SBATCH --mem-per-cpu=40GB                     # memory per CORE; total memory is 1 TB (1,000,000 MB)
 #SBATCH --export=ALL 
-#SBATCH --time=5-00:00:00                       # set to 1hr; please choose carefully
+#SBATCH --time=1-00:00:00                      
 #SBATCH --mail-type=BEGIN,END,FAIL              # NONE,BEGIN,END,FAIL,REQUEUE,ALL,...
-#SBATCH --mail-user=${USER}@gmu.edu            # Put your GMU email address here
+#SBATCH --mail-user=EMAIL_ADDRESS(REPLACE_ME)           # Put your GMU email address here
 
 set echo
 umask 0027
@@ -26,4 +26,4 @@ module load cmake
 
 source 'PATH_TO_VIRTUAL_ENVIRONMENT'
 
-python ${USER_PATH}MEGL-Topology-of-Neural-Networks/src/WAB_Cifer10.py
+python ${USER_PATH}/MEGL-Topology-of-Neural-Networks/src/SimpleCNN.py

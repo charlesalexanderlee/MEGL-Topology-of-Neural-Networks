@@ -103,7 +103,7 @@ plt.xticks(custom_ticks, labels=custom_labels)
 # Label the axes
 plt.xlabel("Epochs")
 plt.legend()  # Add a legend to identify the lines
-plt.savefig(f"sweep{sweep_number}-{num_points}pts-dim3")  # Save the plot
+plt.savefig(f"Experiment_Plots/sweep{sweep_number}-{num_points}pts-dim3")  # Save the plot
 print("Plot saved as 'sweepImage.png'")
 plt.show()  # Display the plot
 

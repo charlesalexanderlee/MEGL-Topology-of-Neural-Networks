@@ -1,8 +1,6 @@
 # imports
 import wandb
-#from constants import wandb_key
-wandb.login(key="a1418080c9100b24c9431beda05cc3730cf801d8")
-
+from constants import wandb_key, sweep_name
 from wandb.integration.keras import WandbMetricsLogger, WandbModelCheckpoint
 from DataGrabber import *
 
@@ -13,10 +11,7 @@ from tensorflow.keras.layers import Input, Dense, Conv2D, BatchNormalization, Ma
 from tensorflow.keras.models import Model
 from tensorflow.keras import layers, models
 from tensorflow.keras.callbacks import EarlyStopping
-
-import matplotlib.pyplot as plt
-import numpy as np
-
+wandb.login(key=wandb_key)
 # ResNet Architecture:
 def identity_block(x, filter):
     # copy tensor to variable called x_skip
@@ -187,5 +182,5 @@ sweep_config = {
         },
     },
 }
-sweep_id = wandb.sweep(sweep_config, project="Jo-500-Models-ResNet-ArchitectureFORACTUALDATA")
+sweep_id = wandb.sweep(sweep_config, project=sweep_name)
 wandb.agent(sweep_id, train, count=1)

@@ -105,5 +105,5 @@ plt.xticks(custom_ticks, labels=custom_labels)
 # Label the axes
 plt.xlabel("Epochs")
 plt.legend()  # Add a legend to identify the lines
-plt.savefig(f"Resnet-sweep{sweep_number}-{num_points}pts-dim2")  # Save the plot
+plt.savefig(f"Experiment_Plots/Resnet-sweep{sweep_number}-{num_points}pts-dim2")  # Save the plot
 plt.show()  # Display the plot

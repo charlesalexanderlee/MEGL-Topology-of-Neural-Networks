@@ -45,10 +45,10 @@ docker run -it --rm megl-tnn
 **Faculty Member**
 * Dr. Benjamin Schweinhart
 
-**Graduate Students**
+**Doctoral Intern**
 * Shrunal Pothagoni
 
-**Undergraduate Students**
+**Undergraduate Interns**
 * Eugenie Ahn
 * Finn Brennan
 * [Diane Hamilton](https://www.linkedin.com/in/dhamil-bytes/)

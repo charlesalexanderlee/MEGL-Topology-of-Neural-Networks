@@ -41,9 +41,6 @@ Run the Docker container:
 docker run -it --rm megl-tnn
 ```
 
-## Running Experiments
-Coming soon (we are currently experimenting with the MNIST dataset and the CIFAR10 dataset).
-
 ## Authors
 **Faculty Member**
 * Dr. Benjamin Schweinhart
